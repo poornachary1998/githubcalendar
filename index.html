@@ -1,27 +1,69 @@
-<!-- Save this as index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My GitHub Contributions</title>
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Graph | Stay Consistent</title>
+
+  <!-- GitHub Calendar CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+
+  <!-- Styling -->
   <style>
     body {
       margin: 0;
-      background: #0d1117;
-      color: #c9d1d9;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0d1117, #010409);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+      overflow: hidden;
     }
+
+    h1 {
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 30px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
     .calendar {
-      max-width: 90%;
+      animation: fadeIn 1.2s ease-in-out;
+      max-width: 90vw;
+    }
+
+    /* Hide day/axis labels */
+    text[font-size="10"] {
+      display: none;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #58a6ff;
+      }
+      to {
+        text-shadow: 0 0 20px #58a6ff, 0 0 30px #1f6feb;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <h1>🔥 Stay Consistent, Keep Committing</h1>
   <div class="calendar"></div>
 
+  <!-- GitHub Calendar Script -->
   <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
   <script>
     GitHubCalendar(".calendar", "poornachary1998", { responsive: true });
